@@ -1,0 +1,15 @@
+// Base
+/* Reset styles */
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Root font size */
+html {
+    font-size: 62.5%;
+}
