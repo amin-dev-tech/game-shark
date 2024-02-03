@@ -12,10 +12,13 @@
 // components imports
 @import "components/btn";
 @import "components/header";
-
-// layouts imports
 @import "components/footer";
 @import "components/header";
+@import "components/rating";
+@import "components/product";
+
+// layouts imports
+@import "layouts/main";
 
 // pages imports
 @import "pages/home";

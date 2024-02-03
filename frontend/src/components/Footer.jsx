@@ -1,15 +1,17 @@
 // bootstrap imports
 import { Container, Row, Col } from "react-bootstrap";
 
+// logo import
+import logo from "../assets/logo.png";
+
 function Footer() {
   return (
-    <footer className="page-footer bg-dark text-light p-5">
+    <footer className="bg-dark text-light p-4 footer">
       <Container>
         <Row className="text-center">
           <Col>
             <p>
-              <img src="./images/logo.png" alt="logo" className="header-logo" />
-              Game Shark
+              <img src={logo} alt="logo" className="header-logo" /> Game Shark
             </p>
           </Col>
           <Col>

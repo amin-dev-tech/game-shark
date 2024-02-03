@@ -1,0 +1,14 @@
+.rating {
+    display: flex;
+    align-items: center;
+
+    span {
+        display: flex;
+        vertical-align: top;
+        color: $color-star;
+    }
+
+    &__text {
+        color: $color-black !important;
+    }
+}

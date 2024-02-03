@@ -11,8 +11,14 @@ import {
 // react imports
 import { useState } from "react";
 
+// rrb imports
+import { LinkContainer } from "react-router-bootstrap";
+
 // library imports
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
+
+// logo import
+import logo from "../assets/logo.png";
 
 function Header() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -25,10 +31,12 @@ function Header() {
     <header>
       <Navbar expand="lg" className="mb-3 px-5" variant="dark" bg="dark">
         <Container fluid>
-          <Navbar.Brand href="#" className="d-flex">
-            <img src="./images/logo.png" alt="logo" className="header-logo" />
-            Game Shark
-          </Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand className="d-flex">
+              <img src={logo} alt="logo" className="header-logo" />
+              Game Shark
+            </Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle
             aria-controls={`offcanvasNavbar-expand-$lg`}
             onClick={handleExpand}
@@ -45,12 +53,18 @@ function Header() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="flex-grow-1 pe-3 ">
-                <Nav.Link href="#action1">Features</Nav.Link>
-                <Nav.Link href="#action2">New</Nav.Link>
-                <Nav.Link href="#action2">
-                  <ShoppingCartIcon width={20} />
-                  Cart
-                </Nav.Link>
+                <LinkContainer to="/features">
+                  <Nav.Link>Features</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/new">
+                  <Nav.Link>New</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/cart">
+                  <Nav.Link>
+                    <ShoppingCartIcon width={20} />
+                    Cart
+                  </Nav.Link>
+                </LinkContainer>
               </Nav>
               <Form className="d-flex">
                 <Form.Control

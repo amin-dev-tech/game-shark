@@ -18,6 +18,7 @@ const products = [
     countInStock: "10",
     rating: "4.5",
     numReviews: "15",
+    theme: "primary",
   },
   {
     _id: "2",
@@ -32,6 +33,7 @@ const products = [
     countInStock: "16",
     rating: "4.0",
     numReviews: "22",
+    theme: "secondary",
   },
   {
     _id: "3",
@@ -46,6 +48,7 @@ const products = [
     countInStock: "9",
     rating: "2.5",
     numReviews: "12",
+    theme: "success",
   },
   {
     _id: "4",
@@ -60,6 +63,7 @@ const products = [
     countInStock: "5",
     rating: "3.5",
     numReviews: "17",
+    theme: "danger",
   },
   {
     _id: "5",
@@ -74,6 +78,7 @@ const products = [
     countInStock: "13",
     rating: "4.0",
     numReviews: "9",
+    theme: "warning",
   },
   {
     _id: "6",
@@ -88,6 +93,7 @@ const products = [
     countInStock: "0",
     rating: "5.0",
     numReviews: "33",
+    theme: "primary",
   },
 ];
 

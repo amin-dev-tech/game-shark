@@ -3,8 +3,8 @@ import { Container } from "react-bootstrap";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-// component imports
-import HomeScreen from "./screens/HomeScreen";
+// rrd imports
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Header />
       <main className="py-5">
         <Container>
-          <HomeScreen />
+          <Outlet />
         </Container>
       </main>
       <Footer />
