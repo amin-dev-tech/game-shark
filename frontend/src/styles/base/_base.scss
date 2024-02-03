@@ -1,7 +1,6 @@
 // Base
 /* Reset styles */
-*
-{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -10,6 +9,10 @@
 }
 
 /* Root font size */
-html {
-    font-size: 62.5%;
+// html {
+//     font-size: 62.5%;
+// }
+
+body {
+    font-family: "Dosis", sans-serif;
 }
