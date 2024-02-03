@@ -4,16 +4,26 @@ import { useParams, Link } from "react-router-dom";
 // bootstrap imports
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 
-// data import
-import products from "../../data/products";
+// react imports
+import { useEffect, useState } from "react";
 
 // library imports
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 import Rating from "../components/Rating";
+import axios from "axios";
 
 function ProductScreen() {
   const { id: productId } = useParams();
-  const product = products.find((p) => p._id === productId);
+
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get(`/api/products/${productId}`);
+      setProduct(data);
+    };
+    fetchData();
+  }, [productId]);
 
   return (
     <>
