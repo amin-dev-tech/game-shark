@@ -1,0 +1,24 @@
+{
+  "name": "game-shark",
+  "version": "1.0.0",
+  "description": "e-Commerce for game srtore",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "cun": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "author": "Amin Fallahzadeh",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.1",
+    "nodemon": "^3.0.3"
+  }
+}
