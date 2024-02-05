@@ -13,12 +13,14 @@ import Rating from "../components/Rating";
 import axios from "axios";
 
 function ProductScreen() {
+  // getting product id from quesry string
   const { id: productId } = useParams();
 
   const [product, setProduct] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
+      // find the product that matches the ID
       const { data } = await axios.get(`/api/products/${productId}`);
       setProduct(data);
     };

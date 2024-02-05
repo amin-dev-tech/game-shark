@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 function HomeScreen() {
   const [products, setProducts] = useState([]);
 
+  // fetching producst data from backend with axios
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get("/api/products");

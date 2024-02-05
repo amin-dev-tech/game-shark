@@ -6,8 +6,12 @@ dotenv.config();
 
 // data import
 import products from "./data/products.js";
+import connectDB from "./config/db.js";
 
 const port = process.env.PORT || 3000;
+
+// Connect to MongoDB
+connectDB();
 
 const app = express();
 

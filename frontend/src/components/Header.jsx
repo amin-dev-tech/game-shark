@@ -23,6 +23,7 @@ import logo from "../assets/logo.png";
 function Header() {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // handling the hamburger menue while in mobile mode
   function handleExpand() {
     setIsExpanded(!isExpanded);
   }

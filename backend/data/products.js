@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: "1",
     name: "Playstation 5 Controller",
     image: "/images/product-1.jpg",
     description:
@@ -21,7 +20,6 @@ const products = [
     theme: "primary",
   },
   {
-    _id: "2",
     name: "Playstation 5",
     image: "/images/product-2.jpg",
     description:
@@ -36,7 +34,6 @@ const products = [
     theme: "secondary",
   },
   {
-    _id: "3",
     name: "XBox Series X",
     image: "/images/product-3.jpg",
     description:
@@ -51,7 +48,6 @@ const products = [
     theme: "success",
   },
   {
-    _id: "4",
     name: "Game Racing Wheel",
     image: "/images/product-4.jpg",
     description:
@@ -66,7 +62,6 @@ const products = [
     theme: "danger",
   },
   {
-    _id: "5",
     name: "XBox Series X Controller",
     image: "/images/product-5.jpg",
     description:
@@ -81,7 +76,6 @@ const products = [
     theme: "warning",
   },
   {
-    _id: "6",
     name: "Playstation 4 Pro",
     image: "/images/product-6.jpg",
     description:
@@ -96,7 +90,6 @@ const products = [
     theme: "primary",
   },
   {
-    _id: "7",
     name: "XBox One X",
     image: "/images/product-7.jpg",
     description:
@@ -111,7 +104,6 @@ const products = [
     theme: "secondary",
   },
   {
-    _id: "8",
     name: "Playstation VR2",
     image: "/images/product-8.jpg",
     description:
