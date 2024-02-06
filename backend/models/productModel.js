@@ -60,6 +60,7 @@ const productSchema = new mongoose.Schema(
     theme: {
       type: String,
       required: true,
+      default: "primary",
     },
   },
   {
