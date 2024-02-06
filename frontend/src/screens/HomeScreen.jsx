@@ -6,6 +6,8 @@ import { useGetProductsQuery } from "../slices/productsApiSlice";
 
 // component imports
 import Product from "../components/Product";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 
 function HomeScreen() {
   // fetching producst data from backend with redux
@@ -14,9 +16,13 @@ function HomeScreen() {
   return (
     <>
       {isLoading ? (
-        <h2>Loading...</h2>
+        <h2>
+          <Loader />
+        </h2>
       ) : error ? (
-        <div>{error?.data?.message || error.error}</div>
+        <Message variant="danger">
+          {error?.data?.message || error.error}
+        </Message>
       ) : (
         <>
           {" "}
