@@ -23,7 +23,7 @@ const getProductById = asyncHandler(async (req, res) => {
   }
   // using the error handler that we override
   res.status(404);
-  throw new Error("Resource not found!!");
+  throw new Error("Resource not found!");
 });
 
 export { getProductById, getProducts };
