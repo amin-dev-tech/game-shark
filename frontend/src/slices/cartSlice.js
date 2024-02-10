@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = localStorage.getItem("cart")
-  ? JSON.pares(localStorage.getItem("cart"))
+  ? JSON.parse(localStorage.getItem("cart"))
   : { cartItems: [] };
 
 // decimal helper function
