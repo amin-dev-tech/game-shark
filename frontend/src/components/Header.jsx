@@ -1,6 +1,7 @@
 // bootstrap imports
 import {
   Container,
+  Badge,
   Navbar,
   Nav,
   Offcanvas,
@@ -10,6 +11,9 @@ import {
 
 // react imports
 import { useState } from "react";
+
+// redux imports
+import { useSelector } from "react-redux";
 
 // rrb imports
 import { LinkContainer } from "react-router-bootstrap";
@@ -22,6 +26,9 @@ import logo from "../assets/logo.png";
 
 function Header() {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // access cart comming from the store
+  const { cartItems } = useSelector((state) => state.cart);
 
   // handling the hamburger menue while in mobile mode
   function handleExpand() {
@@ -64,6 +71,11 @@ function Header() {
                   <Nav.Link>
                     <ShoppingCartIcon width={20} />
                     Cart
+                    {cartItems.length > 0 && (
+                      <Badge pill bg="danger" style={{ marginLeft: "5px" }}>
+                        {cartItems.reduce((a, c) => a + c.qty, 0)}
+                      </Badge>
+                    )}
                   </Nav.Link>
                 </LinkContainer>
               </Nav>

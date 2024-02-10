@@ -7,15 +7,18 @@ import { Link } from "react-router-dom";
 // component imports
 import Rating from "./Rating";
 
-function Product({ product, color }) {
+function Product({ product }) {
   return (
-    <Card className="my-3 p-3 rounded" border={color}>
+    <Card className="my-3 p-3 rounded" border={product.theme}>
       <Link to={`/product/${product._id}`}>
         <Card.Img src={product.image} variant="top" />
       </Link>
 
       <Card.Body>
-        <Link to={`/product/${product._id}`} className={`link-${color}`}>
+        <Link
+          to={`/product/${product._id}`}
+          className={`link-${product.theme}`}
+        >
           <Card.Title className="product-title">
             <strong>{product.name}</strong>
           </Card.Title>
