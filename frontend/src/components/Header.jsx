@@ -7,16 +7,22 @@ import {
   Offcanvas,
   Form,
   Button,
+  NavDropdown,
 } from "react-bootstrap";
 
 // react imports
 import { useState } from "react";
 
 // redux imports
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useLogoutMutation } from "../slices/usersApiSlice";
+import { logout } from "../slices/authSlice";
 
 // rrb imports
 import { LinkContainer } from "react-router-bootstrap";
+
+// rrd imports
+import { useNavigate } from "react-router-dom";
 
 // library imports
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
@@ -27,8 +33,26 @@ import logo from "../assets/logo.png";
 function Header() {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [logoutApiCall] = useLogoutMutation();
+
   // access cart comming from the store
   const { cartItems } = useSelector((state) => state.cart);
+
+  // access user comming from the store
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate("/login");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   // handling the hamburger menue while in mobile mode
   function handleExpand() {
@@ -90,8 +114,28 @@ function Header() {
                 <Button variant="outline-light me-2">Search</Button>
               </Form>
               <div className={isExpanded ? "mt-3" : ""}>
-                <Button variant="outline-danger me-2">Login</Button>
-                <Button variant="outline-danger">Sign Up</Button>
+                {userInfo ? (
+                  <NavDropdown
+                    title={userInfo.name}
+                    id="username"
+                    className="btn btn-outline-success me-2"
+                  >
+                    <LinkContainer to="/profile">
+                      <NavDropdown.Item>Profile</NavDropdown.Item>
+                    </LinkContainer>
+                    <NavDropdown.Item onClick={logoutHandler}>
+                      Logout
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                ) : (
+                  <LinkContainer to="/login">
+                    <Button variant="outline-danger me-2">Login</Button>
+                  </LinkContainer>
+                )}
+
+                <LinkContainer to="/register">
+                  <Button variant="outline-danger">Register</Button>
+                </LinkContainer>
               </div>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
